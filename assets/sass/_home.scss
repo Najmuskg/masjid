@@ -11,6 +11,8 @@
 
 .work-wrapper {
     width: 100%;
+    position: relative;
+    top: 40px;
     .holder {
         display: flex;
         justify-content: space-between;
@@ -23,6 +25,8 @@
         }
         .left-side {
             max-width: 67%;
+            position: relative;
+            top: rem(80px);
             @include mobile-screen {
                 order: 2;
                 max-width: 100%;

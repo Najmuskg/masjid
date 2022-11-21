@@ -456,6 +456,8 @@ input.check-toggle-round-flat:checked + label:after {
 
 .work-wrapper {
   width: 100%;
+  position: relative;
+  top: 40px;
 }
 
 .work-wrapper .holder {
@@ -484,6 +486,8 @@ input.check-toggle-round-flat:checked + label:after {
 
 .work-wrapper .holder .left-side {
   max-width: 67%;
+  position: relative;
+  top: 5rem;
 }
 
 @media (max-width: 576px) {
