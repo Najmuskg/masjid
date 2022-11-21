@@ -1,0 +1,53 @@
+.footer--area {
+    padding: 40px 0;
+    @include mobile-screen {
+        padding: 20px 0;
+    }
+    .holder {
+        display: grid;
+        place-items: center;
+        li {
+            margin-left: 40px;
+            display: inline-block;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: #afafaf;
+                width: 1px;
+                height: 11px;
+                top: 4px;
+                right: -22px;
+            }
+            &:last-child:after {
+                display: none;
+            }
+            @include mobile-screen {
+                margin-left: 5px;
+                &::after {
+                    display: none;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: #afafaf;
+                font-size: rem(13px);
+                display: block;
+                transition: all 0.3s ease-in-out;
+                @include mobile-screen {
+                  
+                    font-size: 9px;
+                }
+                &::after {
+                    @include animate-line;
+                }
+
+                &:hover {
+                    &::after {
+                        @include animate-line-hover;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+// =====>  REM px function
+$baseFontSize: 16;
+@function rem($pixels, $context: $baseFontSize) {
+    @if (unitless($pixels)) {
+      $pixels: $pixels * 1px;
+    }
+  
+    @if (unitless($context)) {
+      $context: $context * 1px;
+    }
+  
+    @return $pixels / $context * 1rem;
+  }
+  
+  // -- EM function
+  $browser-context: 16; // Default
+  @function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+  }
+
+
+// =====>  fonts
+$font--main:'Poppins', sans-serif;
+
+
+// =====> colors
+$color--white: #ffffff;
+$color--black: #000000;
+$color--1: #15C798;
+$color--2: #A4A0A0;
+$color--3: #0E1A17;
+$color--4: #E4E4E4;
+$color--5: #08674E;
+
+$color--6: #0e76a8;
+$color--7: #3f729b;

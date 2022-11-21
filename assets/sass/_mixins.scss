@@ -1,0 +1,91 @@
+@mixin bg-cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+@mixin d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin animate-line {
+    background-color: $color--2;
+    bottom: -3px;
+    content: "";
+    height: 1px;
+    right: 0;
+    position: absolute;
+    width: 0;
+    transition: all 0.3s;
+}
+
+@mixin animate-line-hover {
+    left: 0;
+    width: 100%;
+}
+
+
+@mixin large-screen {
+    @media (min-width: 1200px) {
+      @content;
+    }
+ }
+  
+  @mixin medium-screen {
+    @media (max-width: 1024px) {
+      @content;
+    }
+ }
+  
+  @mixin tab-screen {
+    @media (max-width: 768px) {
+      @content;
+    }
+ }
+  
+  @mixin mobile-screen {
+    @media  (max-width: 576px){
+      @content;
+    }
+ }
+
+
+ 
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+/* Single property */
+html {
+  @include fluid-type(font-size, 320px, 1366px, 13px, 16px);
+}
+.holder {
+  @include fluid-type(padding, 320px, 1366px, 0 20px,0 40px); 
+}
+.switch{
+  @include fluid-type(display, 320px, 1366px, none, block); 
+}
+

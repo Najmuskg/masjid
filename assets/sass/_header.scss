@@ -1,0 +1,46 @@
+.header-wrapper {
+    width: 100%;
+    height: rem(80px);
+    position: fixed;
+    z-index: 333;
+    .holder {
+        @include d-flex;
+        justify-content: space-between;
+        height: 80px;
+        @include mobile-screen {
+          flex-direction: column;
+          margin: 10px 0 0 0;
+        }
+        .header-logo {
+            a {
+                @include d-flex;
+                img {
+                    @include mobile-screen {
+                        max-width: rem(55px);
+                    }
+                }
+                h1 {
+                    font-size: rem(24px);
+                    font-weight: 600;
+                    color: $color--3;
+                    margin: 0 0 0 10px;
+
+                    span {
+                        color: $color--1;
+                    }
+                }
+            }
+        }
+        .header-info {
+            @include d-flex;
+            justify-content: space-between;
+        }
+    }
+    &.active {
+        background-color: $color--4;
+        transition: all 0.3s ease-in-out;
+      @include mobile-screen{
+        height: 7.25rem;
+      }
+    }
+}

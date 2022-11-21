@@ -1,0 +1,285 @@
+.hero-wrapper {
+    position: relative;
+    top: 80px;
+    @include bg-cover;
+    height: calc(100vh - 80px);
+    @include mobile-screen {
+        height: calc(50vh - 80px);
+        top: 95px;
+    }
+}
+
+.work-wrapper {
+    width: 100%;
+    .holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(20px);
+        padding: rem(30px);
+        @include mobile-screen {
+            flex-direction: column;
+            padding: rem(26px) 0;
+        }
+        .left-side {
+            max-width: 67%;
+            @include mobile-screen {
+                order: 2;
+                max-width: 100%;
+            }
+            .announcement-wrapper {
+                // position: relative;
+                // top: -140px;
+                .announcement-heading {
+                    @include mobile-screen {
+                        padding: 0 rem(20px);
+                    }
+                    p {
+                        font-weight: 400;
+                        font-size: rem(15px);
+                        margin-bottom: rem(40px);
+                        max-width: rem(997px);
+                    }
+                }
+                .announcement-shedule {
+                    background-color: $color--white;
+                    @include d-flex;
+                    gap: rem(40px);
+                    padding: rem(30px) rem(25px);
+                    border: rem(1px) solid $color--4;
+                    border-radius: rem(60px);
+                    margin-bottom: rem(20px);
+                    @include mobile-screen {
+                        flex-direction: column;
+                    }
+                    .announcements-image {
+                        border-radius: rem(30px);
+                        @include mobile-screen {
+                            width: 100%;
+                        }
+                        img {
+                            max-width: rem(321px);
+                            border-radius: rem(40px);
+                            @include mobile-screen {
+                                max-width: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .announcement-info {
+                        position: relative;
+                        top: rem(-15px);
+                        p {
+                            max-width: rem(500px);
+                        }
+                        .published-date {
+                            font-size: rem(20px);
+                            font-weight: 500;
+                            margin-bottom: rem(10px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right-side {
+        max-width: 31%;
+        @include mobile-screen {
+            order: 1;
+            max-width: 100%;
+        }
+        .prayer-times {
+            position: relative;
+            top: rem(-33px);
+            background-color: $color--white;
+            border-radius: rem(36px);
+            .prayers-heading {
+                background-color: $color--1;
+                margin: 20px 0 0 0;
+                text-align: center;
+                border-radius: rem(36px) rem(36px) 0 0;
+                h5 {
+                    color: $color--white;
+                    font-size: rem(18px);
+                    padding: rem(17px) 0;
+                    margin: 0;
+                }
+            }
+            .prayer-lists {
+                border: rem(1px) solid #ddd;
+                border-radius: 0 0 rem(36px) rem(36px);
+                padding: 0 1.25rem rem(15px) 1.25rem;
+                p {
+                    font-size: rem(13px);
+                    text-align: center;
+                    margin: rem(15px) 0 0 0;
+                }
+                .prayer-shedule {
+                    @include d-flex;
+                    justify-content: space-between;
+                    border-bottom: rem(1px) solid $color--2;
+                    h4 {
+                        font-weight: 600;
+                        font-size: rem(15px);
+                        margin: rem(20px) 0 rem(10px) 0;
+                    }
+                    strong {
+                        color: $color--1;
+                        font-weight: 600;
+                        font-size: rem(24px);
+                    }
+                }
+                .prayers-name {
+                    margin-top: rem(20px);
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    justify-content: space-between;
+                    gap: rem(10px) rem(69px);
+                    align-items: center;
+                    @include mobile-screen {
+                        gap: 0.625rem 7.313rem;
+                    }
+                    span {
+                        color: $color--black;
+                        font-weight: 700;
+                        font-size: rem(18px);
+                    }
+                    // .soon {
+                    //     text-align: right;
+                    //     width: 136%;
+                    //     position: relative;
+                    //     left: -48px;
+                    //     @include mobile-screen{
+                    //         left: -34px;
+                    //     }
+                    // }
+                }
+            }
+        }
+        // .iqamah{
+        //     position: relative;
+        //     top: 0;
+        // }
+    }
+}
+
+.navigation-area {
+    padding: 0 rem(30px);
+    background-color: $color--5;
+    padding: rem(20px) 0;
+    background-color: #f6f6f6;
+    .holder {
+        @include d-flex;
+        justify-content: space-between;
+        @include mobile-screen {
+            flex-direction: column;
+        }
+        .contact {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: rem(20px);
+            @include mobile-screen {
+                padding: 0 0 30px 0;
+            }
+            .contact-info {
+                position: relative;
+                top: rem(-10px);
+                h3 {
+                    font-weight: 700;
+                    span {
+                        color: $color--1;
+                    }
+                }
+                p {
+                    font-weight: 400;
+                    max-width: rem(456px);
+                    font-size: rem(18px);
+                    padding-bottom: rem(26px);
+                }
+                .contact-details {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    span {
+                        margin-top: rem(10px);
+                        color: $color--1;
+                        font-weight: 600;
+                    }
+                    strong {
+                        color: $color--black;
+                    }
+                }
+            }
+        }
+        .navigation {
+            position: relative;
+            top: rem(-17px);
+            @include mobile-screen {
+                padding: 0 0 30px 0;
+            }
+            h3 {
+                font-weight: 700;
+                margin-bottom: rem(15px);
+                @include mobile-screen {
+                  text-align: center;
+                }
+            }
+            ul {
+                li {
+                    margin-bottom: rem(15px);
+                    @include mobile-screen {
+                        margin-left: 10px;
+                        display: inline-block;
+                    }
+                    a {
+                        color: $color--2;
+                        position: relative;
+                        &::after {
+                            @include animate-line;
+                        }
+        
+                        &:hover {
+                            &::after {
+                                @include animate-line-hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .library {
+            position: relative;
+            top: rem(-40px);
+            h3 {
+                font-weight: 700;
+                margin-bottom: rem(15px);
+                @include mobile-screen {
+                    text-align: center;
+                  }
+            }
+            ul {
+                li {
+                    margin-bottom: rem(15px);
+                    @include mobile-screen {
+                        margin-left: 10px;
+                        display: inline-block;
+                    }
+                    a {
+                        color: $color--2;
+                        position: relative;
+                        &::after {
+                            @include animate-line;
+                        }
+        
+                        &:hover {
+                            &::after {
+                                @include animate-line-hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
