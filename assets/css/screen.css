@@ -588,7 +588,7 @@ input.check-toggle-round-flat:checked + label:after {
 
 .work-wrapper .right-side .prayer-times {
   position: relative;
-  top: -7.0625rem;
+  top: -7.1875rem;
   background-color: #ffffff;
   border-radius: 2.25rem;
 }
